@@ -25,7 +25,8 @@
      */ 
     function init(game) {
         let createPlatform = platform.create;
-
+        createPlatform(9, 600, 0.5, 2, true);
+        createPlatform(400, 200, 1, 2, true);
         ////////////////////////////////////////////////////////////////////////
         // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
         
