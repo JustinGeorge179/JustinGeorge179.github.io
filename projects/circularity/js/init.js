@@ -1,3 +1,23 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var init = function (window) {
     'use strict';
     var
@@ -33,9 +53,10 @@ var init = function (window) {
 
         // TODO 3 / 8 : Call the drawCircle() function 
         drawCircle()
-    
-    
-
+        drawCircle()
+        drawCircle()
+        drawCircle()
+        drawCircle()
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -46,6 +67,7 @@ var init = function (window) {
         and check to see if it has drifted off the screen.         
         */
         function update() {
+
             // TODO 4 : Update the circle's position //
 
 
