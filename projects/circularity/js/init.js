@@ -1,23 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var init = function (window) {
     'use strict';
     var
@@ -46,17 +26,18 @@ var init = function (window) {
         // TODO 2 : Create a function that draws a circle 
         function drawCircle() {
             circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
-            physikz.addRandomVelocity(circle, canvas);
+            physikz.addRandomVelocity(circle, canvas, 10, 10);
             view.addChild(circle);
             circles.push(circle);
         }
 
         // TODO 3 / 8 : Call the drawCircle() function 
-        drawCircle()
-        drawCircle()
-        drawCircle()
-        drawCircle()
-        drawCircle()
+
+        for (var loopsCompleted = 0; loopsCompleted < 100; loopsCompleted++) {
+            drawCircle()
+
+        }
+
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -69,16 +50,17 @@ var init = function (window) {
         function update() {
 
             // TODO 4 : Update the circle's position //
+           //different code or sumthing
 
+            // TODO 5 : Call game.checkCirclePosition() on your circles.
+          
+            for (var i = 0; i < circles.length; i++) {
+                var eachCircle = circles[i];
+                physikz.updatePosition(eachCircle)
+                game.checkCirclePosition(eachCircle)
 
-            // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-
-
-            // TODO 9 : Iterate over the array
-
-
+            }
         }
-
         /* 
         This Function should check the position of a circle that is passed to the 
         Function. If that circle drifts off the screen, this Function should move
@@ -92,8 +74,15 @@ var init = function (window) {
             }
 
             // TODO 7 : YOUR CODE STARTS HERE //////////////////////
-
-
+            if (circle.y > canvas.height) {
+                circle.y = 0;
+            }
+            if (circle.y < 0) {
+                circle.y = canvas.height;
+            }
+            if (circle.x < 0) {
+                circle.x = canvas.width;
+            }
 
             // YOUR TODO 7 CODE ENDS HERE //////////////////////////
         }
@@ -120,3 +109,4 @@ if ((typeof process !== 'undefined') &&
     // here, export any references you need for tests //
     module.exports = init;
 }
+
